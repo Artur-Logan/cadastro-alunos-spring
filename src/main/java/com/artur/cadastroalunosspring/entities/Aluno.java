@@ -1,4 +1,4 @@
-package com.artur.cadastroalunosspring.controller;
+package com.artur.cadastroalunosspring.entities;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-public class AlunoController {
+public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
