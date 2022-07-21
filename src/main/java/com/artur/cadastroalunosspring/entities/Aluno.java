@@ -19,4 +19,7 @@ public class Aluno {
     private String sobreNome;
     private Integer idade;
     private LocalDate dataCadastro;
+    private String numeroSala;
+    private String periodo;
+    private String serieAno;
 }
