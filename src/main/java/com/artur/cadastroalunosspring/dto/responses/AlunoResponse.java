@@ -1,5 +1,6 @@
 package com.artur.cadastroalunosspring.dto.responses;
 
+import com.artur.cadastroalunosspring.entities.Responsavel;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -12,7 +13,8 @@ public class AlunoResponse {
     private String sobreNome;
     private Integer idade;
     private LocalDate dataCadastro;
-    private String numeroSala;
     private String periodo;
     private String serieAno;
+    private SalaResponse sala;
+    private ResponsavelResponse responsavel;
 }

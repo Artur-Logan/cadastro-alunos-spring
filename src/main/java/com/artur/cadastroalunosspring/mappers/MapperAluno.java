@@ -6,8 +6,8 @@ import com.artur.cadastroalunosspring.entities.Aluno;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
-@Mapper(componentModel = "spring")
-public interface MappersAluno {
+@Mapper(componentModel = "spring", uses = { MapperSala.class, MapperResponsavel.class })
+public interface MapperAluno {
 
     Aluno toEntity(AlunoRequest alunoRequest);
     AlunoResponse toResponse(Aluno aluno);

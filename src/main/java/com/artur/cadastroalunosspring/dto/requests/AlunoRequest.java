@@ -1,5 +1,6 @@
 package com.artur.cadastroalunosspring.dto.requests;
 
+import com.artur.cadastroalunosspring.entities.Responsavel;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -11,7 +12,8 @@ public class AlunoRequest {
     private String sobreNome;
     private Integer idade;
     private LocalDate dataCadastro;
-    private String numeroSala;
     private String periodo;
     private String serieAno;
+    private SalaRequest sala;
+    private ResponsavelRequest responsavel;
 }

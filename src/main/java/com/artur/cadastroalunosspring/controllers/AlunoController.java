@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/alunos")
+@RequestMapping("/aluno")
 public class AlunoController {
 
     private final AlunoService alunoService;
@@ -48,6 +48,13 @@ public class AlunoController {
     @PutMapping("/{id}")
     public ResponseEntity<AlunoResponse> atualizar(@PathVariable Long id, @RequestBody AlunoRequest alunoRequest){
         AlunoResponse alunoResponse = alunoService.atualizar(id, alunoRequest);
+
+        return ResponseEntity.ok().body(alunoResponse);
+    }
+
+    @PatchMapping("/{id}/{idNovaSala}")
+    public ResponseEntity<AlunoResponse> trocaSala(@PathVariable Long id, @PathVariable Long idNovaSala) {
+        AlunoResponse alunoResponse = alunoService.trocaDeSala(id, idNovaSala);
 
         return ResponseEntity.ok().body(alunoResponse);
     }
