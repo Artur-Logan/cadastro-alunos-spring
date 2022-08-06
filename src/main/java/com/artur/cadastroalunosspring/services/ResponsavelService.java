@@ -3,6 +3,7 @@ package com.artur.cadastroalunosspring.services;
 import com.artur.cadastroalunosspring.dto.requests.ResponsavelRequest;
 import com.artur.cadastroalunosspring.dto.responses.ResponsavelResponse;
 import com.artur.cadastroalunosspring.entities.Responsavel;
+import com.artur.cadastroalunosspring.exceptions.ResponsavelNotFoundException;
 import com.artur.cadastroalunosspring.mappers.MapperResponsavel;
 import com.artur.cadastroalunosspring.repositories.ResponsavelRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class ResponsavelService {
     }
 
     public ResponsavelResponse obter(Long id){
-        Responsavel responsavel = responsavelRepository.findById(id).get();
+        Responsavel responsavel = responsavelRepository.findById(id).orElseThrow( () -> new ResponsavelNotFoundException("Responsavel não encontrado para o id: " + id));
 
         return mapperResponsavel.toResponse(responsavel);
     }
