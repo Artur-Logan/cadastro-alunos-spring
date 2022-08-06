@@ -22,7 +22,7 @@ public class ResponsavelService {
     public ResponsavelResponse salvar(ResponsavelRequest responsavelRequest){
         Responsavel responsavel = mapperResponsavel.toEntity(responsavelRequest);
 
-        responsavelRepository.save(responsavel);
+       responsavel =  responsavelRepository.save(responsavel);
 
         return mapperResponsavel.toResponse(responsavel);
     }
