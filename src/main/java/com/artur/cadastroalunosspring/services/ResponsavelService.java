@@ -34,7 +34,9 @@ public class ResponsavelService {
     }
 
     public void deletar(Long id){
-        Responsavel responsavel = responsavelRepository.findById(id).get();
+        //Se quiser fazer o delete dessa forma, veja só que tá tentando retornar valor do findById pra variavel response
+        //dai precisa mockar o retorno do findById:
+        Responsavel responsavel = responsavelRepository.findById(id).orElseThrow( () -> new ResponsavelNotFoundException("Responsavel não encontrado para o id: " + id));
 
         responsavelRepository.delete(responsavel);
     }

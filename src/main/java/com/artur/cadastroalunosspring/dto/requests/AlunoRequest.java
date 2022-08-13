@@ -1,6 +1,5 @@
 package com.artur.cadastroalunosspring.dto.requests;
 
-import com.artur.cadastroalunosspring.entities.Responsavel;
 import lombok.Data;
 
 import java.time.LocalDate;
